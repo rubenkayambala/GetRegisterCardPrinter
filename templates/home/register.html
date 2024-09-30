@@ -28,6 +28,11 @@
             <h5 class="mb-3 text-center">FICHE D'IDENTIFICATION POUR LA BIBLIOTHEQUE/ETUDIANT</h4>
             <hr class="my-2">
             <form method="post" enctype="multipart/form-data" class="log-form mb-5">
+                {% if messages %}
+                {% for message in messages %}
+                <small class="text-danger">{{message}}</small>
+                {% endfor %}
+                {% endif %}
                 {% csrf_token %}
                 <div id="first">
                     <label for="">
@@ -92,7 +97,7 @@
                     </label>
                     <label for="">
                         Contact du Père
-                        {{form.contact_mere}}
+                        {{form.contact_pere}}
                     </label>
                     <label for="">
                         Nom de la Mère

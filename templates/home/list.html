@@ -26,6 +26,7 @@
                 <h3>Liste d'enregistrements</h3>
                 <table class="table border">
                     <tr>
+                        <td>Photo</td>
                         <td>Nom</td>
                         <td>Post-nom</td>
                         <td>Prénom</td>
@@ -39,6 +40,7 @@
                     </tr>
                     {% for user in users %}
                     <tr>
+                        <td class="pb-3"><img src="{{user.photo.url}}" width="50" alt="{{user.nom}}"></td>
                         <td class="pb-3">{{user.nom}}</td>
                         <td class="pb-3">{{user.postnom}}</td>
                         <td class="pb-3">{{user.prenom}}</td>
@@ -56,12 +58,19 @@
 
                             <div class="card-item-1">
                                 <div class="content">
-                                    <h6 class="text-center">UNIVERSITE DE KINSHASA</h6>
-                                    <h6 class="text-center">CARTE DE LA BIBLIOTHEQUE DE MEDECINE</h6>
+                                    <div class="row align-items-center">
+                                        <div class="col-2">
+                                            <img src="/static/img/unikin.png" width="50" alt="unikin">
+                                        </div>
+                                        <div class="col-10 p-0">
+                                            <h6 class="text-center">UNIVERSITE DE KINSHASA</h6>
+                                            <h6 class="text-center">CARTE DE LA BIBLIOTHEQUE DE MEDECINE</h6>
+                                        </div>
+                                    </div>
                                     <hr class="my-2">
                                     <div class="row">
                                         <div class="col-3">
-                                            <img src="/static/img/ruben.jpg" style="width: 100%; height: 100px; object-fit: cover; object-position: top;" alt="">
+                                            <img src="{{user.photo.url}}" style="width: 100%; height: 100px; object-fit: cover; object-position: top;" alt="">
                                         </div>
                                         <div class="col-5 p-0">
                                             <small><b>Nom: {{user.nom}}</b></small>
@@ -78,7 +87,7 @@
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-end">
-                                        <small>Fait à kinshasa, le {{user.date}}</small>
+                                        <small>Fait à kinshasa, le {{user.date|date:'d/m/Y'}}</small>
                                     </div>
                                 </div>
                                 <div class="d-flex">
@@ -92,7 +101,7 @@
                             <div class="card-item-2">
                                 <div class="card">
                                     <div class="title">
-                                        <div class="logo"><img src="unikin.png" alt=""></div>
+                                        <div class="logo"><img src="/static/img/unikin.png" alt=""></div>
                                         <div>
                                             <h1>Université de Kinshasa</h1>
                                             <h2>Faculté de Médecine</h2>
@@ -100,7 +109,7 @@
                                         </div>
                                     </div>
                                     <div class="photo">
-                                        <img src="profil.jpg" alt="">
+                                        <img src="{{user.photo.url}}" alt="">
                                     </div>
                                     <div class="info">
                                         <div class="wrapper">
