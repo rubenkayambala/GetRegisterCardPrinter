@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/bootstrap-icons/bootstrap-icons.min.css">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/css/stl.css">
+    <link rel="stylesheet" href="/static/css/stls.css">
     <title>Bibliothèque Medecine UNIKIN</title>
 </head>
 <body>
@@ -52,36 +52,107 @@
                     </tr>
 
                     <div id="{{user.id}}" class="card-view d-none">
-                        <div class="card-item">
-                            <h6 class="text-center">UNIVERSITE DE KINSHASA</h6>
-                            <h6 class="text-center">CARTE DE LA BIBLIOTHEQUE DE MEDECINE</h6>
-                            <hr class="my-2">
-                            <div class="row">
-                                <div class="col-3">
-                                    <img src="/static/img/ruben.jpg" style="width: 100%; height: 100px; object-fit: cover; object-position: top;" alt="">
-                                </div>
-
-                                <div class="col-5 p-0">
-                                    <small><b>Nom: {{user.nom}}</b></small>
-                                    <small><b>Post-nom: {{user.postnom}}</b></small>
-                                    <small><b>Prénom: {{user.prenom}}</b></small>
-                                    <small><b>Email: {{user.email}}</b></small>
-                                    <small><b>Lieu de naissance: {{user.lieu_naissance}}</b></small>
-                                    <small><b>Date de naissance: {{user.date_naissance}}</b></small>
-                                    <small><b>Adresse: {{user.adresse}}</b></small>
-                                </div>
-                                <div class="col-4">
-                                    <small><b>Télephone: {{user.telephone}}</b></small>
-                                    <small><b>Sexe: {{user.sexe}}</b></small>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-end">
-                                <small>Fait à kinshasa, le {{user.date}}</small>
-                            </div>
-                        </div>
                         <div class="d-flex">
-                            <button class="btn btn-success">Imprimer</button> &nbsp;&nbsp;
-                            <button class="btn btn-danger" onclick='show({{user.id}})'>Fermer</button>
+
+                            <div class="card-item-1">
+                                <div class="content">
+                                    <h6 class="text-center">UNIVERSITE DE KINSHASA</h6>
+                                    <h6 class="text-center">CARTE DE LA BIBLIOTHEQUE DE MEDECINE</h6>
+                                    <hr class="my-2">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <img src="/static/img/ruben.jpg" style="width: 100%; height: 100px; object-fit: cover; object-position: top;" alt="">
+                                        </div>
+                                        <div class="col-5 p-0">
+                                            <small><b>Nom: {{user.nom}}</b></small>
+                                            <small><b>Post-nom: {{user.postnom}}</b></small>
+                                            <small><b>Prénom: {{user.prenom}}</b></small>
+                                            <small><b>Email: {{user.email}}</b></small>
+                                            <small><b>Lieu de naissance: {{user.lieu_naissance}}</b></small>
+                                            <small><b>Date de naissance: {{user.date_naissance}}</b></small>
+                                            <small><b>Adresse: {{user.adresse}}</b></small>
+                                        </div>
+                                        <div class="col-4">
+                                            <small><b>Télephone: {{user.telephone}}</b></small>
+                                            <small><b>Sexe: {{user.sexe}}</b></small>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-end">
+                                        <small>Fait à kinshasa, le {{user.date}}</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <button class="btn btn-success">Imprimer</button> &nbsp;&nbsp;
+                                    <button class="btn btn-danger" onclick='show({{user.id}})'>Fermer</button>
+                                </div>
+                            </div>
+
+                            &nbsp;&nbsp;
+
+                            <div class="card-item-2">
+                                <div class="card">
+                                    <div class="title">
+                                        <div class="logo"><img src="unikin.png" alt=""></div>
+                                        <div>
+                                            <h1>Université de Kinshasa</h1>
+                                            <h2>Faculté de Médecine</h2>
+                                            <h3>Laboratoire Général</h3>
+                                        </div>
+                                    </div>
+                                    <div class="photo">
+                                        <img src="profil.jpg" alt="">
+                                    </div>
+                                    <div class="info">
+                                        <div class="wrapper">
+                                            <span class="head">Nom :</span>
+                                            <span>{{user.nom}}</span>
+                                        </div>
+                                        <div class="wrapper">
+                                            <span class="head">Postnom :</span>
+                                            <span>{{user.postnom}}</span>
+                                        </div>
+                                        <div class="wrapper">
+                                            <span class="head">Prénom :</span>
+                                            <span>{{user.prenom}}</span>
+                                        </div>
+                                        <div class="wrapper">
+                                            <span class="head">Sexe :</span>
+                                            <span>{{user.sexe}}</span>
+                                        </div>
+                                        <div class="wrapper">
+                                            <span class="head">Date de naissance :</span>
+                                            <span>{{user.date_naissance}}</span>
+                                        </div>
+                                        <div class="wrapper">
+                                            <span class="head">Téléphone :</span>
+                                            <span>{{user.telephone}}</span>
+                                        </div>
+                                        <div class="wrapper">
+                                            <span class="head">Adresse :</span>
+                                            <span>{{user.adresse}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="qrCode">
+                                        <div id="qrcode"></div>
+                                        <div class="depInfo">
+                                            <h2>Carte d'étudiant</h2>
+                                            <div>
+                                                <span class="first">Grade/Promotion :</span>
+                                                <span>P6/847125</span>
+                                            </div>
+                                            <div>
+                                                <span class="first">Dept./Filiaire :</span>
+                                                <span>Pharmacie</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <button class="btn btn-success">Imprimer</button> &nbsp;&nbsp;
+                                    <button class="btn btn-danger" onclick='show({{user.id}})'>Fermer</button>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     {% endfor %}

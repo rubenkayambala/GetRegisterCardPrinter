@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.contrib import messages
 from .forms import CarteForm
 from .models import Carte
 
@@ -11,7 +12,7 @@ def HomeView(request):
 def RegisterView(request):
     template_name = 'home/register.html'
     if request.method == "POST":
-        form = CarteForm(request.POST)
+        form = CarteForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('/list/')
