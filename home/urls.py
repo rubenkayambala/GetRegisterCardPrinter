@@ -7,4 +7,5 @@ urlpatterns = [
     path('', views.HomeView, name='home'),
     path('register/', views.RegisterView, name='register'),
     path('list/', views.ListView, name='list'),
+    path('detail/<id>', views.DetailView, name='detail'),
 ]

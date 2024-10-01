@@ -37,3 +37,12 @@ def ListView(request):
         'users': users,
     }
     return render(request, template_name, context)
+
+
+def DetailView(request, id):
+    user = Carte.objects.get(id=id)
+    template_name = 'home/detail.html'
+    context = {
+        'user': user,
+    }
+    return render(request, template_name, context)

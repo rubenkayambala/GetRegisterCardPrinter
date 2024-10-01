@@ -35,7 +35,10 @@
                         <td class="pb-3">{{user.lieu_naissance}}</td>
                         <td class="pb-3">{{user.date_naissance}}</td>
                         <td class="pb-3">{{user.adresse}}</td>
-                        <td class="pb-3"><button class="btn-sm px-3 btn-info" onclick='show({{user.id}})'>Voir</button></td>
+                        <td class="pb-3">
+                            <button class="btn-sm px-3 btn-info" onclick='show({{user.id}})'>Voir la carte</button>
+                            <a href="{% url 'home:detail' user.id %}" class="btn btn-primary py-1 mt-2">Voir la fiche</a>
+                        </td>
                     </tr>
 
                     <div id="{{user.id}}" class="card-view d-none">
