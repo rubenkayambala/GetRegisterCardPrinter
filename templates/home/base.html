@@ -14,12 +14,15 @@
     <div class="wrapper">
         <header class="">
             <div class="container">
-                <div class="d-flex justify-content-between py-3">
+                <a href="{% url 'home:home' %}">
+                <div class="d-flex py-3">
+                    <img src="/static/img/unikin.png" width="50" alt=""> &nbsp;&nbsp;&nbsp;
                     <div class="left">
                         <h6>UNIKIN/Faculté de Medecine</h6>
                         <h6>Bibliothèque centrale</h6>
                     </div>
                 </div>
+                </a>
             </div>
         </header>
 
@@ -27,8 +30,14 @@
 
         <footer>
             <div class="container">
-                <span>&copy; copyright 2024.</span> &nbsp;&nbsp;
-                <span>Powered by TFB SARL</span> &nbsp;&nbsp;
+                <div class="row justify-content-between">
+                    <div class="col-auto">
+                        <span>Powered by Get Skills Class.</span>
+                    </div>
+                    <div class="col-auto">
+                        <span>&copy; copyright 2024 All Rigth Reserved to Braves Man TG</span> &nbsp;&nbsp;
+                    </div>
+                </div>
             </div>
         </footer>
     </div>

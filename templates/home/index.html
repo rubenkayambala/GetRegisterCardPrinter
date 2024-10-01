@@ -1,101 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/slick-theme.css">
-    <link rel="stylesheet" href="/static/css/slick.css">
-    <link rel="stylesheet" href="/static/css/all.min.css">
-    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/css/stls.css">
-    <title>Bibliothèque Medecine UNIKIN</title>
-</head>
-<body>
-    <div class="wrapper">
-        <header class="">
-            <div class="container">
-                <div class="d-flex justify-content-between py-3">
-                    <div class="left">
-                        <h6>UNIKIN/Faculté de Medecine</h6>
-                        <h6>Bibliothèque centrale</h6>
+{% extends './base.html' %}
+{% block content %}
+    <main>
+        <div class="container">
+            <div class="row justify-content-between py-3">
+                <div class="col-md-4">
+                    <div class="btns text-center m-3">
+                        <button id="circle-btn" class="circle text-center">
+                            <h3>Nouvel <br> enregistrement</h3>
+                        </button>
+                            <a href="{% url 'home:list' %}" class="btn btn-success">Liste des enregistrements</a> <br>
                     </div>
                 </div>
-            </div>
-        </header>
 
-        <main>
-            <div class="container">
-                <div class="row justify-content-between py-3">
-                    <div class="col-md-4">
-                        <div class="btns text-center m-3">
-                            
-                            <button id="circle-btn" class="circle text-center">
-                                <h3>Nouvel <br> enregistrement</h3>
-                            </button>
-
-                             <a href="{% url 'home:list' %}" class="btn btn-success">Liste des enregistrements</a> <br>
-                             <!-- <a href="#" class="btn btn-warning">Enregistrements qui expirent</a> -->
+                <div class="col-md-4 mt-5">
+                    <div id="carouselId" class="carousel slide h-75" data-bs-ride="carousel">
+                        <div class="carousel-item active">
+                            <div class="details mt-5">
+                                <h5>Welcome to get register !</h5>
+                                <span>Nous avons mis en place des mesures <br>strictes pour protéger vos données et <br>garantir la securité de l'application, <br>l'accès securisé, des mises à jour régulières et la <br> formation du personnel. <br>Merci de votre confiance!</span>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="details mt-5">
+                                <h5>Pour commencer, cliquez sur</h5>
+                                <button class="btn btn-info">Nouvel enregistrement</button>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="col-md-4 mt-5">
-                        <div id="carouselId" class="carousel slide h-75" data-bs-ride="carousel">
-                            <div class="carousel-item active">
-                                <div class="details mt-5">
-                                    <h5>Welcome to get register !</h5>
-                                    <span>Nous avons mis en place des mesures <br>strictes pour protéger vos données et <br>garantir la securité de l'application, <br>l'accès securisé, des mises à jour régulières et la <br> formation du personnel. <br>Merci de votre confiance!</span>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="details mt-5">
-                                    <h5>Pour commencer, cliquez sur</h5>
-                                    <button class="btn btn-info">Nouvel enregistrement</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="text-center">
-                            <a href="about.html" class="btn btn-primary about-btn">A propos</a>
-                        </div>
+                    <div class="text-center">
+                        <a href="about.html" class="btn btn-primary about-btn">A propos</a>
                     </div>
+                </div>
 
-                    <div class="col-md-4">
-                        <div class="pub">
-                            <div class="content">
-                                <img src="/static/img/ruben.jpg" alt="ruben">
-                            </div>
+                <div class="col-md-4">
+                    <div class="pub">
+                        <div class="content">
+                            <img src="/static/img/ruben.jpg" alt="ruben">
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div id="choiceBanner">
-                <div class="d-flex flex-column">
-                    <h4 class="mb-4">Choisissez un enregistrement</h4>
-                    <a href="{% url 'home:register' %}" class="btn btn-info etud">
-                        Enregistrer un étudiant
-                    </a>
-                    <a href="{% url 'home:register' %}" class="btn btn-primary pers">
-                        Enregistrer un personnel
-                    </a>
-                    <button id="closeBanner" class="btn btn-danger w-100">Annuler</button>
-                </div>
+        <div id="choiceBanner" class="d-none">
+            <div class="d-flex flex-column">
+                <h4 class="mb-4">Choisissez un enregistrement</h4>
+                <a href="{% url 'home:register' %}" class="btn btn-info etud">
+                    Enregistrer un étudiant
+                </a>
+                <a href="{% url 'home:register' %}" class="btn btn-primary pers">
+                    Enregistrer un personnel
+                </a>
+                <button id="closeBanner" class="btn btn-danger w-100">Annuler</button>
             </div>
-        </main>
+        </div>
+    </main>
 
-        <footer>
-            <div class="container">
-                <span>&copy; copyright 2024.</span> &nbsp;&nbsp;
-                <span>Powered by TFB SARL</span> &nbsp;&nbsp;
-            </div>
-        </footer>
-    </div>
-
-    <script src="/static/js/jquery-3.6.0.min.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
-    <script src="/static/js/popper.min.js"></script>
-    <script src="/static/js/slick.min.js"></script>
-    <script src="/static/js/script.js"></script>
     <script>
         let circleBtn = document.getElementById('circle-btn');
         let choiceBanner = document.getElementById('choiceBanner');
@@ -107,5 +68,4 @@
             choiceBanner.classList.toggle('d-none')
         })
     </script>
-</body>
-</html>
+{% endblock %}
